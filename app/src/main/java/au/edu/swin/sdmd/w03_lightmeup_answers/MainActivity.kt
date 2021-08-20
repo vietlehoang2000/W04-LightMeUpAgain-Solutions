@@ -3,10 +3,11 @@ package au.edu.swin.sdmd.w03_lightmeup_answers
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.appcompat.content.res.AppCompatResources
 
 class MainActivity : AppCompatActivity() {
     // this keeps track of the current image
-    var state = R.drawable.ic_assignment_turned_in_24px
+    private var state = R.drawable.ic_assignment_turned_in_24px
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
                 else -> R.drawable.ic_assignment_turned_in_24px
             }
             // then show it on screen
-            imageView.setImageDrawable(getDrawable(state))
+            imageView.setImageDrawable(AppCompatResources.getDrawable(this, state))
         }
     }
 }
